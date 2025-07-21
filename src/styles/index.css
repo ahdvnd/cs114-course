@@ -1,0 +1,283 @@
+/* Reset */
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+}
+
+html {
+    font-family: sans-serif;
+    text-rendering: optimizeSpeed;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav,
+section, summary, progress {
+    display: block;
+}
+
+a {
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+b, strong {
+    font-weight: inherit;
+    font-weight: bolder;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub, sup {
+    position: relative;
+    font-size: 65%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.15em;
+}
+
+img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+}
+
+svg {
+    max-width: 100%;
+    color-interpolation-filters: sRGB;
+    fill: currentColor;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+hr {
+    box-sizing: content-box;
+    overflow: visible;
+    height: 0;
+}
+
+pre {
+    overflow: auto;
+}
+
+code, pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+td, th {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+code {
+    background: #f4f4f4;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+progress {
+    vertical-align: baseline;
+}
+
+/* Layout */
+html {
+    font-size: 16px;
+}
+
+@media(max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+pre, code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: #f6f8fa;
+    padding: 1rem;
+    border-radius: 3px;
+    overflow-x: auto;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+/* Syntax highlighting */
+.CodeMirror.cm-s-default {
+    background: #f6f8fa;
+    color: #24292e;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.CodeMirror.cm-s-default .CodeMirror-line {
+    padding: 0 1rem;
+}
+
+.CodeMirror.cm-s-default .CodeMirror-selected {
+    background: #c8c9fa;
+}
+
+.CodeMirror.cm-s-default .CodeMirror-cursor {
+    border-left: 2px solid #24292e;
+}
+
+.CodeMirror.cm-s-default .cm-variable-2 {
+    color: #005cc5;
+}
+
+.CodeMirror.cm-s-default .cm-comment {
+    color: #6a737d;
+}
+
+.CodeMirror.cm-s-default .cm-keyword, .CodeMirror.cm-s-default .cm-builtin {
+    color: #d73a49;
+}
+
+.CodeMirror.cm-s-default .cm-operator {
+    color: #d73a49;
+}
+
+.CodeMirror.cm-s-default .cm-string {
+    color: #032f62;
+}
+
+.CodeMirror.cm-s-default .cm-number {
+    color: #005cc5;
+}
+
+.CodeMirror.cm-s-default .cm-def {
+    color: #6f42c1;
+}
+
+[class*="language-"] .token {
+    color: #24292e;
+}
+
+[class*="language-"] .token.comment, [class*="language-"] .token.prolog, [class*="language-"] .token.doctype, [class*="language-"] .token.cdata, [class*="language-"] .token.punctuation {
+    color: #6a737d;
+}
+
+[class*="language-"] .token.property, [class*="language-"] .token.tag, [class*="language-"] .token.constant, [class*="language-"] .token.symbol {
+    color: #005cc5;
+}
+
+[class*="language-"] .token.boolean, [class*="language-"] .token.number {
+    color: #005cc5;
+}
+
+[class*="language-"] .token.selector, [class*="language-"] .token.attr-name, [class*="language-"] .token.string, [class*="language-"] .token.char, [class*="language-"] .token.builtin {
+    color: #032f62;
+}
+
+[class*="language-"] .token.operator, [class*="language-"] .token.entity, [class*="language-"] .token.url, [class*="language-"] .token.variable {
+    color: #d73a49;
+}
+
+[class*="language-"] .token.atrule, [class*="language-"] .token.attr-value, [class*="language-"] .token.function {
+    color: #6f42c1;
+}
+
+[class*="language-"] .token.regex, [class*="language-"] .token.important {
+    color: #e36209;
+}
+
+[class*="language-"] .token.keyword {
+    color: #d73a49;
+}
+
+.jp-RenderedText pre {
+    .ansi-cyan-fg.ansi-cyan-fg,
+    .ansi-blue-fg.ansi-blue-fg {
+        color: #17a2b8;
+    }
+
+    .ansi-green-fg.ansi-green-fg {
+        color: #28a745;
+    }
+
+    .ansi-red-fg.ansi-red-fg {
+        color: #dc3545;
+    }
+}
+
+/* Gatsby Images */
+.gatsby-resp-image-link {
+    box-shadow: none;
+}
+
+.gatsby-resp-image-figure {
+    margin: 0;
+}
+
+.gatsby-resp-image-figcaption {
+    font-size: 0.875rem;
+    color: #6a737d;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.gatsby-resp-image-figcaption code {
+    background: #f4f4f4;
+    padding: 2px 5px;
+    border-radius: 3px;
+}

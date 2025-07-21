@@ -8,7 +8,6 @@ module.exports = {
             resolve: `gatsby-plugin-sass`,
             options: {
                 indentedSyntax: true,
-                implementation: require('sass'),
                 postCssPlugins: [autoprefixer()],
                 cssLoaderOptions: {
                     localIdentName:

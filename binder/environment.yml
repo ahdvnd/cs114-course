@@ -1,0 +1,24 @@
+name: spacy-course
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - numpy=2.0.2
+  - scipy>=1.10.0
+  - matplotlib>=3.6.0
+  - pip:
+    - spacy[lookups]==3.8.3
+    - wasabi>=0.10.0,<1.1.0
+    - srsly>=2.5.1,<3.0.0
+    - pytest>=4.4.2,<4.5.0
+    - black==22.3.0
+    - pandas>=1.5.0
+    - seaborn>=0.12.0
+    - scikit-learn>=1.2.0
+    - requests>=2.28.0
+    - beautifulsoup4>=4.11.0
+    - nltk>=3.8.0
+    - https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl#egg=en_core_web_sm==3.8.0
+    - https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.8.0/en_core_web_md-3.8.0-py3-none-any.whl#egg=en_core_web_md==3.8.0 
