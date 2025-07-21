@@ -13,53 +13,37 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: slug,
     })
     
-    // Add lang field based on file path
-    const filePath = node.fileAbsolutePath
-    if (filePath) {
-      const langMatch = filePath.match(/\/([a-z]{2})\//)
-      if (langMatch) {
-        createNodeField({
-          node,
-          name: `lang`,
-          value: langMatch[1],
-        })
-      }
-    }
+    // Set language to English for all content
+    createNodeField({
+      node,
+      name: `lang`,
+      value: 'en',
+    })
   }
   
   // Create Code nodes from code files
   if (node.internal.type === `File` && node.sourceInstanceName === `exercises`) {
-    const filePath = node.relativePath
-    const langMatch = filePath.match(/^([a-z]{2})\//)
-    const lang = langMatch ? langMatch[1] : 'en'
+    const fileExt = path.extname(node.name)
+    const allowedExtensions = ['.py', '.sh', '.js', '.json', '.cfg']
     
-    // Only process code files
-    const codeExtensions = ['py', 'sh', 'js', 'json', 'cfg']
-    const extension = node.extension
-    if (codeExtensions.includes(extension)) {
-      const name = node.name
-      
+    if (allowedExtensions.includes(fileExt)) {
       try {
-        // Read the file content
-        const code = fs.readFileSync(node.absolutePath, 'utf8')
-        
+        const fileContent = fs.readFileSync(node.absolutePath, 'utf8')
         const codeNode = {
-          id: `code-${node.id}`,
-          parent: node.id,
-          children: [],
+          id: `${node.id}-code`,
+          code: fileContent,
+          lang: 'en', // Set to English
+          name: path.basename(node.name, fileExt),
+          extension: fileExt.substring(1),
           internal: {
-            type: `Code`,
-            contentDigest: node.internal.contentDigest,
+            type: 'Code',
+            contentDigest: require('crypto').createHash('md5').update(fileContent).digest('hex'),
           },
-          code,
-          lang,
-          name,
-          extension,
         }
         
         createNode(codeNode)
       } catch (error) {
-        console.warn(`Failed to read file ${node.absolutePath}:`, error.message)
+        console.warn(`Error reading file ${node.absolutePath}:`, error.message)
       }
     }
   }
@@ -116,7 +100,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-} 
+}
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

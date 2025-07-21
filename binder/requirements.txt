@@ -19,6 +19,6 @@ nltk>=3.8.0
 # torch>=1.12.0
 # tensorflow>=2.10.0
 
-# spaCy models - only include the most commonly used ones for faster startup
+# spaCy models - English only for faster startup
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl#egg=en_core_web_sm==3.8.0
 https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.8.0/en_core_web_md-3.8.0-py3-none-any.whl#egg=en_core_web_md==3.8.0
